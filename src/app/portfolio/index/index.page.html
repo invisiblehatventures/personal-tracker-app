@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Portfolio#index</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button
+    [routerLink]="['/portfolio/123']"
+    [routerDirection]="'root'">
+    Go to detail
+  </ion-button>
+
+  <ion-list>
+    <ion-item
+      *ngFor="let item of items"
+      [routerLink]="['/portfolio', item.id]"
+      [routerDirection]="'root'">
+      {{item.title}}
+      <div class="item-note" slot="end">
+        {{item.note}}
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
